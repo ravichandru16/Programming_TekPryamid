@@ -10,22 +10,24 @@ public class String_PalindromeWithoutLoop {
 		System.out.print("Enter ur String Value here :");
 		String val=scan.next();
 		int len=val.length()-1;
+		int j=len;
 		
 		char[] ch=val.toCharArray();
-	//	boolean flag;
-		
+		int count=1;
 		for(int i=0;i<len/2;i++)
 		{
-			if(val.charAt(i)==ch[len])
+			if(val.charAt(i)==ch[j])
 			{
-				System.out.println(val+" is a palindrome");
-				break;
-			}
-			else
-			{
-				System.out.println(val+" is not a palindrome");
-				break;
+				count++;
+				j--;
 			}
 		}
+		System.out.println(count);
+		if(count>len/2)
+		{
+			System.out.println(val+" is a palindrome");
+		}
+		else
+			System.out.println(val+" is not a palindrome");
 	}
 }
